@@ -182,7 +182,6 @@ dist
 
 # vuepress v2.x temp and cache directory
 .temp
-.cache
 
 # Docusaurus cache and generated files
 .docusaurus
@@ -301,7 +300,6 @@ StyleCopReport.xml
 *.tmp
 *.tmp_proj
 *_wpftmp.csproj
-*.log
 *.tlog
 *.vspscc
 *.vssscc
@@ -495,7 +493,6 @@ FakesAssemblies/
 
 # Node.js Tools for Visual Studio
 .ntvs_analysis.dat
-node_modules/
 
 # Visual Studio 6 build log
 *.plg
@@ -514,8 +511,6 @@ node_modules/
 *.dsp
 
 # Visual Studio 6 technical files
-*.ncb
-*.aps
 
 # Visual Studio LightSwitch build output
 **/*.HTMLClient/GeneratedArtifacts
