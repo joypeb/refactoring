@@ -24,21 +24,12 @@ function createStatementData(invoice, plays) {
         const result = Object.assign({}, aPerformance);
         result.play = playFor(aPerformance);
         result.amount = calculator.amount;
-        result.volumeCredits = volumeCreditsFor(result)
+        result.volumeCredits = calculator.volumeCredits;
         return result;
     }
 
     function playFor(aPerformance) {
         return plays[aPerformance.playId];
-    }
-
-    function volumeCreditsFor(aPerformance) {
-        let volumeCredits = 0;
-        volumeCredits += Math.max(aPerformance.audience - 30, 0);
-
-        if ('comedy' === aPerformance.play.type)
-            volumeCredits += Math.floor(aPerformance.audience / 5);
-        return volumeCredits;
     }
 
     function totalAmount(data) {
