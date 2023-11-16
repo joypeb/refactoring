@@ -33,26 +33,7 @@ function createStatementData(invoice, plays) {
     }
 
     function amountFor(aPerformance) {
-        amountResult = 0;
-
-        switch (aPerformance.play.type) {
-            case 'tragedy':
-                amountResult = 40000;
-                if (aPerformance.audience > 30) {
-                    amountResult += 1000 * (aPerformance.audience - 30);
-                }
-                break;
-            case 'comedy':
-                amountResult = 30000;
-                if (aPerformance.audience > 20) {
-                    amountResult += 10000 + 500 * (aPerformance.audience - 20);
-                }
-                amountResult += 300 * aPerformance.audience;
-                break;
-            default:
-                throw new Error(`알 수 없는 장르: ${aPerformance.play.type}`);
-        }
-        return amountResult;
+        return new PerformanceCalculator(aPerformance, playFor(aPerformance)).amount;
     }
 
     function volumeCreditsFor(aPerformance) {
